@@ -20,6 +20,23 @@ rect(0,0,500,500);
   colony[i].walk();
   colony[i].show();
   }
+    //wrap around screen    
+    if(myX >width)
+    {     
+      myX = 0;    
+    }    
+    else if (myX<0)
+    {     
+      myX = width;    
+    }    
+    if(myY >height)
+    {    
+      myY = 0;    
+    } 
+    else if (myY < 0)
+    {     
+      myY = height;    
+    }   
 }
   
 class Walker
