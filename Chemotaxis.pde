@@ -19,27 +19,29 @@ rect(0,0,500,500);
   for(int i = 0; i<colony.length; i++){
   colony[i].walk();
   colony[i].show();
-  }
-    //wrap around screen    
-    if(myX >width)
-    {     
-      myX = 0;    
-    }    
-    else if (myX<0)
-    {     
-      myX = width;    
-    }    
-    if(myY >height)
-    {    
-      myY = 0;    
-    } 
-    else if (myY < 0)
-    {     
-      myY = height;    
-    }   
-}
   
-class Walker
+  if(colony[i].getX() >width)
+    {     
+      colony[i].setX(0);    
+    }    
+    else if (colony[i].getX()<0)
+    {     
+     colony[i].setX(width);    
+    }    
+    if(colony[i].getY() >height)
+    {    
+      colony[i].setY(0);    
+    } 
+    
+    else if (colony[i].getY() < 0)
+    {     
+      colony[i].setY(height);    
+    }   
+  }
+       //wrap around screen    
+    
+}
+  class Walker
 {
   int myX, myY, myColor;
   Walker()
@@ -48,6 +50,21 @@ class Walker
     myY = (int)(Math.random()*700);
     myColor = color(247, 205, 79);
   }
+    public void setY(int n){
+    myY = n;
+  }
+  public void setX(int n){
+    myX = n;
+  }
+  public int getX(){
+    return myX;
+  }
+  
+  public int getY(){
+    return myY;
+  }
+
+  
   void walk()
   {
     if(mouseX > x){
